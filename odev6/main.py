@@ -47,9 +47,3 @@ class LCW:
 
 
 LCW().test_navigate()
-
-
-
-
-
-

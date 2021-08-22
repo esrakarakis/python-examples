@@ -8,7 +8,7 @@ class LCW:
     CATEGORY_PAGE = (By.CSS_SELECTOR, ".dropdown-toggle")
     IS_CATEGORY_PAGE = (By.CSS_SELECTOR, ".product-item-wrapper")
     PRODUCT_PAGE = (By.CSS_SELECTOR, ".a_model_item")
-    SELECT_SIZE = (By.CSS_SELECTOR, ".option-size a:nth-child(6)")
+    SELECT_SIZE = (By.CSS_SELECTOR, ".a[data-tracking-label='BedenSecenekleri']")
     SELECTED_SIZE = (By.CSS_SELECTOR, "a.selected")
     ADD_TO_CART = (By.CSS_SELECTOR, ".add-to-cart")
     ADDED_TO_CART = (By.CSS_SELECTOR, ".header-cart-quantity")
@@ -29,7 +29,7 @@ class LCW:
         assert len(self.wait.until(ec.presence_of_all_elements_located(self.IS_CATEGORY_PAGE))) > 10, True
 
         self.wait.until(ec.presence_of_all_elements_located(self.PRODUCT_PAGE))[1].click()
-        assert "SEPETE EKLE" in self.driver.page_source
+        assert self.wait.until(ec.presence_of_element_located(self.ADD_TO_CART)).is_displayed, True
 
         self.wait.until(ec.presence_of_all_elements_located(self.SELECT_SIZE))[0].click()
         assert self.wait.until(ec.presence_of_element_located(self.SELECTED_SIZE)).is_displayed, True

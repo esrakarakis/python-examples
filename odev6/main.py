@@ -20,8 +20,8 @@ class LCW:
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
-        self.WEBSITE = "https://www.lcwaikiki.com/tr-TR/TR"
-        self.driver.get(self.WEBSITE)
+        self.website = "https://www.lcwaikiki.com/tr-TR/TR"
+        self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 30)
 
     def test_navigate(self):

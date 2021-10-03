@@ -3,7 +3,7 @@ from base.page_base import BaseClass
 
 
 class CategoryPage:
-    PAGE_NUMBERS = (By.CSS_SELECTOR, '.a-normal')
+    NEXT_BUTTON = (By.CSS_SELECTOR, '.a-pagination > .a-last')
     GO_TO_PRODUCT = (By.CSS_SELECTOR, '.s-image')
     IS_SECOND_CATEGORY_PAGE = (By.CSS_SELECTOR, '.a-selected')
 
@@ -13,7 +13,7 @@ class CategoryPage:
 
     def second_page(self):
         self.methods.visible_elements(
-            self.PAGE_NUMBERS)[0].click()
+            self.NEXT_BUTTON).click()
         assert self.methods.wait_element(
             self.IS_SECOND_CATEGORY_PAGE).text, "2"
 

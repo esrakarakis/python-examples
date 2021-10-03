@@ -5,8 +5,8 @@ from base.page_base import BaseClass
 class ProductPage:
 
     ADD_TO_LIST = (By.ID, 'wishListMainButton')
-    VIEW_YOUR_LIST = (By.CSS_SELECTOR, '.w-button-inner')
-    PRODUCT_NAME = (By.CSS_SELECTOR, '.product-title-word-break')
+    VIEW_YOUR_LIST = (By.ID, '.wishlistButtonStack')
+    PRODUCT_NAME = (By.ID, '.titleSection')
 
     def __init__(self, driver):
         self.driver = driver

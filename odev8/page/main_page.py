@@ -9,7 +9,6 @@ class MainPage:
     LOGIN_BUTTON = (By.CSS_SELECTOR, '.nav-line-1-container')
     SEARCH_BOX = (By.ID, 'twotabsearchtextbox')
     BUTTON_SEARCH = (By.ID, 'nav-search-submit-button')
-    IS_MAIN_PAGE = (By.CSS_SELECTOR, '.a-carousel-center')
     IS_SEARCH_RESULTS_EXITS = (By.CSS_SELECTOR, '.a-spacing-medium')
 
     def __init__(self, driver):
@@ -18,7 +17,7 @@ class MainPage:
 
     def go_to_homepage(self):
         self.driver.get(self.WEBSITE)
-        home_page_loaded = self.methods.exist_element(self.IS_MAIN_PAGE)
+        home_page_loaded = self.methods.exist_element(By.CSS_SELECTOR, '.a-carousel-center')
         assert home_page_loaded, True
 
     def go_to_signin_page(self):
